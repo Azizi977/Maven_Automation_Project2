@@ -19,7 +19,7 @@ public class T1_screenshot_Yahoo extends ReusableAnnotations {
         System.out.println("The checkbox check condition is: " + isSignInChecked);
         logger.log(LogStatus.INFO,"The checkbox check condition is: " + isSignInChecked);
     }//end of test 1
-
+//ouo
     @Test(priority = 2)
     public void tc001_verifyYahooSignInText() {
         //first navigate to yahoo homepage
