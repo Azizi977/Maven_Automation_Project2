@@ -1,6 +1,6 @@
 package Day13_111222;
 
-import ReusableLibrary.ReusableAnnotations;
+import Reusable_Library.ReusableLibrary.ReusableAnnotations;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 

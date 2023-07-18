@@ -1,7 +1,7 @@
 package Day12_110622;
 
-import ReusableLibrary.Reusabale_Actions_Loggers;
-import ReusableLibrary.ReusableAnnotations;
+import Reusable_Library.ReusableLibrary.Reusable_Actions_Loggers;
+import Reusable_Library.ReusableLibrary.ReusableAnnotations;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
@@ -11,15 +11,15 @@ public class T2_GoogleSearch_ReusableAnnotations extends ReusableAnnotations {
     public void searchForBmw(){
         driver.navigate().to("https://www.google.com");
         //search for bmw on the search field
-        Reusabale_Actions_Loggers.sendKeysAction(driver,"//*[@name='q']", "BMW",logger, "Search Field");
+        Reusable_Actions_Loggers.sendKeysAction(driver,"//*[@name='q']", "BMW",logger, "Search Field");
         //hit submit on google search button
-        Reusabale_Actions_Loggers.submitAction(driver,"//*[@name='btnK']",logger,"Google Search");
+        Reusable_Actions_Loggers.submitAction(driver,"//*[@name='btnK']",logger,"Google Search");
     }//end of test 1
 
     @Test(dependsOnMethods = "searchForBmw")
     public void captureSearchNumber(){
         //capture the search resykts text
-        String results = Reusabale_Actions_Loggers.getTextAction(driver, "//*[@id='result-stats']", logger, "Search Results");
+        String results = Reusable_Actions_Loggers.getTextAction(driver, "//*[@id='result-stats']", logger, "Search Results");
         String[] arrayResult = results.split(" ");
         //print back to html report by using log info
         logger.log(LogStatus.INFO,"Search number for BMW is " + arrayResult[1]);

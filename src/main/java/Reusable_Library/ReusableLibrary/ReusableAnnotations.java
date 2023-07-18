@@ -1,4 +1,4 @@
-package ReusableLibrary;
+package Reusable_Library.ReusableLibrary;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -18,7 +18,7 @@ public class ReusableAnnotations {
     public static ExtentTest logger;
     @BeforeSuite
     public void setTheDriver(){
-        driver = ReusabaleActions.setUpDriver();
+        driver = ReusableActions.setUpDriver();
         //set the report path here
         reports = new ExtentReports("src/main/java/HTML_Report/Automation_Report.html", true);
     }//end of before suite

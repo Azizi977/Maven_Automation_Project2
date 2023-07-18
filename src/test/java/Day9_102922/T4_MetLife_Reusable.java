@@ -1,9 +1,9 @@
 package Day9_102922;
 
-import ReusableLibrary.ReusabaleActions;
+import Reusable_Library.ReusableLibrary.ReusableActions;
 import org.openqa.selenium.WebDriver;
 
-import static ReusableLibrary.ReusabaleActions.setUpDriver;
+import static Reusable_Library.ReusableLibrary.ReusableActions.setUpDriver;
 
 public class T4_MetLife_Reusable {
     public static void main(String[] args) throws InterruptedException {
@@ -14,11 +14,11 @@ public class T4_MetLife_Reusable {
         //hover over the solutions dropdown
         //ReusableActions.mouseHover(driver, "//*[contains(text(), 'SOLUTIONS')]", "Solutions Dropdown");
         //or click on solutions dropdown
-        ReusabaleActions.clickActionByIndex(driver, "//*[contains(text(), 'SOLUTIONS')]", 0, "Solutions Link");
+        ReusableActions.clickActionByIndex(driver, "//*[contains(text(), 'SOLUTIONS')]", 0, "Solutions Link");
         //click on dental link
-        ReusabaleActions.clickAction(driver, "//*[text() = 'Dental']", "Dental Link");
+        ReusableActions.clickAction(driver, "//*[text() = 'Dental']", "Dental Link");
         //capture the headline title
-        String headlineTitle = ReusabaleActions.getTextAction(driver, "//*[@class = 'headline__title']", "Headline Title");
+        String headlineTitle = ReusableActions.getTextAction(driver, "//*[@class = 'headline__title']", "Headline Title");
         //print out the title
         System.out.println("The headline title is " + headlineTitle);
         //quit driver

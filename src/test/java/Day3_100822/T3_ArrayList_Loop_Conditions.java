@@ -30,7 +30,6 @@ public class T3_ArrayList_Loop_Conditions {
              if(countries.get(i) == "USA" || countries.get(i) == "Australia"){
                  System.out.println("Country is " + countries.get(i) + " And index i is " + i);
              }
-
              */
         }//end of loop
     }//end of java class

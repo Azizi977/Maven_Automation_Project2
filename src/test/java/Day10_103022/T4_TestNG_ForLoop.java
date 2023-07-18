@@ -1,6 +1,6 @@
 package Day10_103022;
 
-import ReusableLibrary.ReusabaleActions;
+import Reusable_Library.ReusableLibrary.ReusableActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -12,7 +12,7 @@ public class T4_TestNG_ForLoop {
     WebDriver driver;
     @BeforeSuite
     public void SetChromeDriver(){
-        driver = ReusabaleActions.setUpDriver();
+        driver = ReusableActions.setUpDriver();
     }//end of set driver method
 
     @AfterSuite
@@ -30,11 +30,11 @@ public class T4_TestNG_ForLoop {
         for (int i = 0; i < sports.size(); i++) {
             driver.navigate().to("https://www.google.com");
             //enter a car on search field
-            ReusabaleActions.sendKeysAction(driver, "//*[@name='q']", sports.get(i), "Search Field");
+            ReusableActions.sendKeysAction(driver, "//*[@name='q']", sports.get(i), "Search Field");
             //hit submit on the google search button
-            ReusabaleActions.submitAction(driver, "//*[@name='btnK']", "Google Search Button");
+            ReusableActions.submitAction(driver, "//*[@name='btnK']", "Google Search Button");
             //capture result text
-            String result = ReusabaleActions.getTextAction(driver, "//*[@id='result-stats']", "Search Results");
+            String result = ReusableActions.getTextAction(driver, "//*[@id='result-stats']", "Search Results");
             //split result for the number
             String[] arrayResult = result.split(" ");
             //print number to the console

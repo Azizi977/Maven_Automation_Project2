@@ -1,6 +1,6 @@
 package Day11_110522;
 
-import ReusableLibrary.ReusabaleActions;
+import Reusable_Library.ReusableLibrary.ReusableActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
@@ -12,7 +12,7 @@ public class T2_Boolean {
 
     @BeforeSuite
     public void SetChromeDriver() {
-        driver = ReusabaleActions.setUpDriver();
+        driver = ReusableActions.setUpDriver();
     }//end of set driver method
 
     @AfterSuite
@@ -26,7 +26,7 @@ public class T2_Boolean {
         //first navigate to yahoo homepage
         driver.navigate().to("https://www.yahoo.com");
         //next we need to lcick on sign in button
-        ReusabaleActions.clickAction(driver, "//*[@class = '_yb_1933e']", "Sign in button");
+        ReusableActions.clickAction(driver, "//*[@class = '_yb_1933e']", "Sign in button");
         //we need to verify that signed in option is checked
         boolean isSignInChecked  = driver.findElement(By.xpath("//*[@id= 'persistent']")).isSelected();
         System.out.println("The checkbox check condition is: " + isSignInChecked);
@@ -35,7 +35,7 @@ public class T2_Boolean {
     @Test(priority = 2)
     public void tc002_verifySignedInOptionIsUnChecked() {
         //click on check box to uncheck it
-        ReusabaleActions.clickAction(driver, "//*[@id= 'persistent']", "SignedInCheckBox");
+        ReusableActions.clickAction(driver, "//*[@id= 'persistent']", "SignedInCheckBox");
         //we need to verify that signed in option is checked
         boolean isSignInChecked = driver.findElement(By.xpath("/*[@id= 'persistent']")).isSelected();
         System.out.println("The checkbox check condition is: " + isSignInChecked);

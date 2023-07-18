@@ -1,6 +1,6 @@
 package Day12_110622;
 
-import ReusableLibrary.ReusabaleActions;
+import Reusable_Library.ReusableLibrary.ReusableActions;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -16,7 +16,7 @@ public class T1_ExtentReport_YahooScenario {
     ExtentTest logger;
     @BeforeSuite
     public void setDriver(){
-        driver = ReusabaleActions.setUpDriver();
+        driver = ReusableActions.setUpDriver();
         reports = new ExtentReports("src/main/java/HTML_Report/Automation_Report.html",true);
     }
     @AfterSuite

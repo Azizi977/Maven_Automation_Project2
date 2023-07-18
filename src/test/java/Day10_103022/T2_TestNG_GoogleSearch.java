@@ -1,6 +1,6 @@
 package Day10_103022;
 
-import ReusableLibrary.ReusabaleActions;
+import Reusable_Library.ReusableLibrary.ReusableActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -10,7 +10,7 @@ public class T2_TestNG_GoogleSearch {
     WebDriver driver;
     @BeforeSuite
     public void SetChromeDriver(){
-        driver = ReusabaleActions.setUpDriver();
+        driver = ReusableActions.setUpDriver();
     }//end of set driver method
 
     @AfterSuite
@@ -22,14 +22,14 @@ public class T2_TestNG_GoogleSearch {
     public void SearchForCar(){
         driver.navigate().to("https://www.google.com");
         //enter a car on search field
-        ReusabaleActions.sendKeysAction(driver,"//*[@name='q']","BMW","Search Field");
+        ReusableActions.sendKeysAction(driver,"//*[@name='q']","BMW","Search Field");
         //hit submit on the google search button
-        ReusabaleActions.submitAction(driver,"//*[@name='btnK']","Google Search Button");
+        ReusableActions.submitAction(driver,"//*[@name='btnK']","Google Search Button");
     }//end of test 1
 
     @Test(priority = 2)
     public void CaptureSearchNumber(){
-        String result = ReusabaleActions.getTextAction(driver,"//*[@id='result-stats']","Search Results");
+        String result = ReusableActions.getTextAction(driver,"//*[@id='result-stats']","Search Results");
         String[] arrayResult = result.split(" ");
         System.out.println("Result is " + arrayResult[1]);
     }//end of test 2

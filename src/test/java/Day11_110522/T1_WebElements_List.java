@@ -1,6 +1,6 @@
 package Day11_110522;
 
-import ReusableLibrary.ReusabaleActions;
+import Reusable_Library.ReusableLibrary.ReusableActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ public class T1_WebElements_List {
     ArrayList<WebElement> totalMenuHeaders, mainMenuHeaders;
     @BeforeSuite
     public void SetChromeDriver() {
-        driver = ReusabaleActions.setUpDriver();
+        driver = ReusableActions.setUpDriver();
         //navigate to usps.com home page
         driver.navigate().to("https://www.usps.com");
         //store all the elements of the menu header into an arraylist of webelements

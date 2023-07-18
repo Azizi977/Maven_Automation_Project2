@@ -1,14 +1,8 @@
 package Day12_110622;
 
-import ReusableLibrary.ReusabaleActions;
-import ReusableLibrary.ReusableAnnotations;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
+import Reusable_Library.ReusableLibrary.ReusableAnnotations;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class T3_YahooScenario_ReusableAnnotations extends ReusableAnnotations {

@@ -1,4 +1,4 @@
-package ReusableLibrary;
+package Reusable_Library.ReusableLibrary;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Reusabale_Actions_Loggers {
+public class Reusable_Actions_Loggers {
     static int timeout = 10;
     //reusable method to define and launch webdriver
     public static WebDriver setUpDriver() {

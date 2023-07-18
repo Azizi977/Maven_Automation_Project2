@@ -1,4 +1,4 @@
-package ReusableLibrary;
+package Reusable_Library.ReusableLibrary;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -14,8 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
-public class ReusabaleActions {
-    static int timeout = 30;
+public class ReusableActions {
+    static int timeout = 5;
     //reusable method to define and launch webdriver
     public static WebDriver setUpDriver() {
         //define the webdriver manager setup for chromedriver
@@ -33,7 +33,7 @@ public class ReusabaleActions {
     }//end of setup driver method
 
     public static void clickAction(WebDriver driver, String xpath, String elementName) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
         try {
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
             element.click();
@@ -43,7 +43,7 @@ public class ReusabaleActions {
     }//end of click action
 
     public static void clickActionByIndex(WebDriver driver, String xpath, int index, String elementName) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
         try {
             wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(xpath))).get(index).click();
         } catch (Exception e) {
@@ -51,7 +51,7 @@ public class ReusabaleActions {
         }
     }//end of index
     public static void submitAction(WebDriver driver, String xpath, String elementName) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
         try {
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
             element.submit();
@@ -71,11 +71,11 @@ public class ReusabaleActions {
         }//end of catch
     }//end of select action
 
-    public static void switchToTabByIndex(WebDriver driver, int index, String elementName) {
+    public static void switchToTabByIndex(WebDriver driver, int userInput, String elementName) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         try {
             ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-            driver.switchTo().window(tabs.get(index));
+            driver.switchTo().window(tabs.get(userInput));
         } catch (Exception e) {
             System.out.println("Unable to switch tabs: " + elementName + " for reason: " + e);
         }//end of catch
@@ -94,7 +94,7 @@ public class ReusabaleActions {
     }
 
     public static void sendKeysAction(WebDriver driver, String xpath, String userInput, String elementName) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
         try {
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
             element.sendKeys(userInput);
@@ -116,7 +116,7 @@ public class ReusabaleActions {
     }//end of scrollByView
 
     public static String getTextAction(WebDriver driver, String xpath, String elementName) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
         String textOutput = "";
         try {
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
